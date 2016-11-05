@@ -37,6 +37,7 @@
             this.buttonStep = new System.Windows.Forms.Button();
             this.labelSpeed = new System.Windows.Forms.Label();
             this.buttonStats = new System.Windows.Forms.Button();
+            this.labelNumber = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPond)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarSpeed)).BeginInit();
             this.SuspendLayout();
@@ -49,6 +50,10 @@
             this.pictureBoxPond.Size = new System.Drawing.Size(493, 56);
             this.pictureBoxPond.TabIndex = 0;
             this.pictureBoxPond.TabStop = false;
+            // 
+            // timer1
+            // 
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // labelStep
             // 
@@ -110,11 +115,22 @@
             this.buttonStats.Text = "Статистика";
             this.buttonStats.UseVisualStyleBackColor = true;
             // 
+            // labelNumber
+            // 
+            this.labelNumber.AutoSize = true;
+            this.labelNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelNumber.Location = new System.Drawing.Point(79, 16);
+            this.labelNumber.Name = "labelNumber";
+            this.labelNumber.Size = new System.Drawing.Size(19, 20);
+            this.labelNumber.TabIndex = 7;
+            this.labelNumber.Text = "0";
+            // 
             // PondForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(514, 254);
+            this.Controls.Add(this.labelNumber);
             this.Controls.Add(this.buttonStats);
             this.Controls.Add(this.labelSpeed);
             this.Controls.Add(this.buttonStep);
@@ -143,5 +159,6 @@
         private System.Windows.Forms.Button buttonStep;
         private System.Windows.Forms.Label labelSpeed;
         private System.Windows.Forms.Button buttonStats;
+        private System.Windows.Forms.Label labelNumber;
     }
 }

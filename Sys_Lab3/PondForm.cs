@@ -53,9 +53,26 @@ namespace Sys_Lab3
             }
         }
 
+        private void makeOneStep()
+        {
+            labelNumber.Text = (Convert.ToInt32(labelNumber.Text) + 1).ToString();
+
+            // тут викликається і виконується метод об'єкту ModellingClass
+
+
+            // а тут беруться змінені List'и з об'єкту і оновлюються значення на картинці
+
+
+        }
+
         private void buttonStep_Click(object sender, EventArgs e)
         {
+            makeOneStep();
+        }
 
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            makeOneStep();
         }
     }
 }
