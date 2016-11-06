@@ -61,8 +61,20 @@ namespace Sys_Lab3
 
 
             // а тут беруться змінені List'и з об'єкту і оновлюються значення на картинці
-
-
+            Bitmap pondImage = new Bitmap(4 * sizeX, 4 * sizeY);
+            for (int i = 0; i < 4 * sizeX; i++)
+                for (int j = 0; j < 4 * sizeY; j++)
+                    pondImage.SetPixel(i, j, Color.White);
+            Color fishClr = Color.Green;
+            foreach (Prey prey in modellingObject.preylist)
+                for (int i = 0; i < 4; i++)
+                    for (int j = 0; j < 4; j++)
+                        picImage.SetPixel(prey.coordinates.X * 4 + i, prey.coordinates.Y * 4 + j, fishClr);
+            fishClr = Color.Black;
+            foreach (Predator predator in modellingObject.predatorlist)
+                for (int i = 0; i < 4; i++)
+                    for (int j = 0; j < 4; j++)
+                        picImage.SetPixel(predator.coordinates.X * 4 + i, predator.coordinates.Y * 4 + j, fishClr);
         }
 
         private void buttonStep_Click(object sender, EventArgs e)
